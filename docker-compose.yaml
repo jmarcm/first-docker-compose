@@ -8,7 +8,7 @@ services:
         volumes:
             - wp:/var/www/html
         depends_on:
-            - database
+            - mysql
         ports:
             - "80:80"
         restart: on-failure
@@ -17,7 +17,7 @@ services:
             WORDPRESS_DB_USER: jmarc
             WORDPRESS_DB_PASSWORD: publicpassword
             WORDPRESS_DB_NAME: wordpress
-    database:
+    mysql:
         image: mysql:5.7
         volumes:
             - db:/var/lib/mysql
