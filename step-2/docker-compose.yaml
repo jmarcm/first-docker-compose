@@ -14,8 +14,8 @@ services:
         restart: on-failure
         environment:
             WORDPRESS_DB_HOST: database:3306
-            WORDPRESS_DB_USER: jmarc
-            WORDPRESS_DB_PASSWORD: abracadabra
+            WORDPRESS_DB_USER: ${DB_USER}
+            WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
             WORDPRESS_DB_NAME: wordpress
     database:
         image: mysql:5.7
@@ -25,5 +25,5 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: secretpassword
             MYSQL_DATABASE: wordpress
-            MYSQL_USER: jmarc
-            MYSQL_PASSWORD: abracadabra
+            MYSQL_USER: ${DB_USER}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
